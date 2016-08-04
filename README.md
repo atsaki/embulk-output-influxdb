@@ -1,4 +1,8 @@
-# InfluxDB output plugin for Embulk
+# InfluxDB v0.8 output plugin for Embulk
+
+**This plug in is the fork of [joker1007/embulk-output-influxdb](https://github.com/joker1007/embulk-output-influxdb) and supports only influxdb v0.8.**
+**It is strongly recommended to use newer influxdb and [joker1007/embulk-output-influxdb](https://github.com/joker1007/embulk-output-influxdb).**
+
 
 ## Overview
 
@@ -20,7 +24,6 @@
 - **mode**:     "insert", or "replace". See bellow. (string, default: insert)
 - **timestamp_column**: timestamp column (string, default: nil)
 - **ignore_columns**: ignore column names (array[string], default: [])
-- **tag_columns**: tag column names (array[string], default: [])
 - **default_timezone**: default timezone for column (string, default: 'UTC')
 
 ### Modes
@@ -39,7 +42,6 @@ out:
   password: root
   database: dbname
   series: ${key_name}_series
-  tag_columns: [name]
   timestamp_column: day
   mode: replace
   ignore_columns:

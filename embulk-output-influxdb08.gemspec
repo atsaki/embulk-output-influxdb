@@ -1,13 +1,13 @@
 
 Gem::Specification.new do |spec|
-  spec.name          = "embulk-output-influxdb"
+  spec.name          = "embulk-output-influxdb08"
   spec.version       = "0.1.1"
-  spec.authors       = ["joker1007"]
-  spec.summary       = "InfluxDB output plugin for Embulk"
-  spec.description   = "Dumps records to InfluxDB."
-  spec.email         = ["kakyoin.hierophant@gmail.com"]
+  spec.authors       = ["atsaki"]
+  spec.summary       = "InfluxDB v0.8 output plugin for Embulk"
+  spec.description   = "Dumps records to InfluxDB v0.8."
+  spec.email         = ["atsaki01@gmail.com"]
   spec.licenses      = ["MIT"]
-  spec.homepage      = "https://github.com/joker1007/embulk-output-influxdb"
+  spec.homepage      = "https://github.com/atsaki/embulk-output-influxdb08.git"
 
   spec.files         = `git ls-files`.split("\n") + Dir["classpath/*.jar"]
   spec.test_files    = spec.files.grep(%r{^(test|spec)/})

@@ -4,8 +4,8 @@ require 'timezone'
 module Embulk
   module Output
 
-    class Influxdb < OutputPlugin
-      Plugin.register_output("influxdb", self)
+    class Influxdb08 < OutputPlugin
+      Plugin.register_output("influxdb08", self)
 
       def self.transaction(config, schema, count, &control)
         # configuration code:
@@ -85,8 +85,8 @@ module Embulk
       def add(page)
         data = @series ? build_payload(page) : build_payload_per_column(page)
 
-        Embulk.logger.info { "embulk-output-influxdb: Writing to #{@database}" }
-        Embulk.logger.debug { "embulk-output-influxdb: #{data}" }
+        Embulk.logger.info { "embulk-output-influxdb08: Writing to #{@database}" }
+        Embulk.logger.debug { "embulk-output-influxdb08: #{data}" }
 
         @connection.write_points(data, @async, @time_precision)
       end
@@ -136,7 +136,7 @@ module Embulk
 
       def delete_series_if_exist(series)
         if @replace && self.class.replaced_series[series].nil? && find_series(series)
-          Embulk.logger.info { "embulk-output-influxdb: Delete series #{series} from #{@database}" }
+          Embulk.logger.info { "embulk-output-influxdb08: Delete series #{series} from #{@database}" }
           self.class.replaced_series[series] = true
           @connection.delete_series(series)
         end
