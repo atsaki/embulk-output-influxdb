@@ -24,7 +24,7 @@ module Embulk
           "default_timezone" => config.param("default_timezone", :string, default: "UTC"),
           "mode" => config.param("mode", :string, default: "insert"),
           "use_ssl" => config.param("use_ssl", :bool, default: false),
-          "verify" => config.param("verify_ssl", :bool, default: true),
+          "verify_ssl" => config.param("verify_ssl", :bool, default: true),
           "ssl_ca_cert" => config.param("ssl_ca_cert", :string, default: nil),
           "time_precision" => config.param("time_precision", :string, default: "s"),
           "initial_delay" => config.param("initial_delay", :float, default: 0.01),
